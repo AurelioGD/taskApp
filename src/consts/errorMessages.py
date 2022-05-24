@@ -1,0 +1,1 @@
+errorPasswordIncorrect = "Contraseña incorrecta"
