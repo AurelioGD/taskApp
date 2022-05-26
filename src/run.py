@@ -1,9 +1,8 @@
-from utils.Graphics import drawLogin, drawRegister, drawAuthenticationMenu
+from utils.Graphics import drawLogin, drawRegister, drawAuthenticationMenu, drawPrincipalMenu
 from utils.cleanTerminal import cleanTerminal
 from services.User import createUser
 
 def main():
-    """ cleanTerminal()
-    newUser = drawRegister()
-    createUser(newUser) """
+    cleanTerminal()
+    drawPrincipalMenu()
 main()

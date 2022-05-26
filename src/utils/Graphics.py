@@ -1,8 +1,18 @@
 from utils.cleanTerminal import cleanTerminal
 from utils.encryptPassword import encryptPassword
-from utils.getRandomInt import getRandomInt
+from utils.getRandomId import getRandomId
 from consts.errorMessages import errorPasswordIncorrect
 from getpass import getpass
+
+def drawPrincipalMenu():
+    print("1.-Filtrar por")
+    print("2.-Agregar una nueva tarea")
+    print("3.-Modificar tarea")
+    print("4.-Eliminar tarea")
+    print("5.-Gestion de equipos")
+    print("6.-Salir")
+    choice = int(input("Selecciona una opcion: "))
+    return choice
 
 def drawLogin():
     user = input("Ingresa el usuario: ")
@@ -18,7 +28,7 @@ def drawRegister():
             break
         cleanTerminal()
         drawMessage(errorPasswordIncorrect)
-    return { "id": str(getRandomInt()), "username": username, "password": encryptPassword(password) }
+    return { "id": str(getRandomId()), "username": username, "password": encryptPassword(password) }
     
 def drawAuthenticationMenu():
     print("1.-Iniciar sesion")
