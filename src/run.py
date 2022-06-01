@@ -1,8 +1,12 @@
-from utils.Graphics import drawLogin, drawRegister, drawAuthenticationMenu, drawPrincipalMenu
+from utils.Graphics import drawPrincipalMenu
 from utils.cleanTerminal import cleanTerminal
-from services.User import createUser
+from choices.PrincipalMenu import PRINCIPAL_MENU_CHOICES
 
 def main():
     cleanTerminal()
-    drawPrincipalMenu()
+    while True:
+        choice = drawPrincipalMenu()
+        cleanTerminal()
+        if choice == "6": break;
+        PRINCIPAL_MENU_CHOICES.get(choice)()
 main()

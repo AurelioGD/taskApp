@@ -11,7 +11,16 @@ def drawPrincipalMenu():
     print("4.-Eliminar tarea")
     print("5.-Gestion de equipos")
     print("6.-Salir")
-    choice = int(input("Selecciona una opcion: "))
+    choice = input("Selecciona una opcion: ")
+    return choice
+    
+def drawManageTeamsMenu():
+    print("1.-Crear equipo")
+    print("2.-Ver notificaciones")
+    print("3.-Ver equipos")
+    print("4.-Agregar amigo")
+    print("5.-Salir")
+    choice = input("Selecciona una opcion: ")
     return choice
 
 def drawLogin():
