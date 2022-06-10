@@ -5,11 +5,11 @@ from consts.errorMessages import errorPasswordIncorrect
 from getpass import getpass
 
 def drawPrincipalMenu():
-    print("1.-Filtrar por")
-    print("2.-Agregar una nueva tarea")
-    print("3.-Modificar tarea")
-    print("4.-Eliminar tarea")
-    print("5.-Gestion de equipos")
+    print("1.-Gestionar tareas")
+    print("2.-Gestionar equipos")
+    print("3.-Ver perfil")
+    print("4.-Ver notificaciones")
+    print("5.-Gestionar amigos")
     print("6.-Salir")
     choice = input("Selecciona una opcion: ")
     return choice
