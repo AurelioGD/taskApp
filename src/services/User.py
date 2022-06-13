@@ -13,11 +13,22 @@ def createUserService(userData):
     })
     
 def getUserByUsernameAndPassword(username, password):
-    coll_ref = db.collection('users').where("username", "==", username).where("password", "==", password)
-    dbResponse = coll_ref.stream()
+    query = db.collection('users').where("username", "==", username).where("password", "==", password)
+    dbResponse = query.stream()
     userData = []
     for doc in dbResponse:
         data = doc.to_dict()
         data["idDoc"] = doc.id
         userData.append(data)
     return userData
+    
+def getPasswordHashByUsername(username):
+    query = db.collection('users').where("username", "==", username)
+    dbResponse = query.stream()
+    userData = []
+    for doc in dbResponse:
+        data = doc.to_dict()
+        data["idDoc"] = doc.id
+        userData.append(data)
+    if len(userData) == 0: return userData
+    return userData[0].get("passwordHash")
