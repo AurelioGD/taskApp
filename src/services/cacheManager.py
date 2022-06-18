@@ -1,11 +1,12 @@
 from os import path, getcwd
+from services.user import getUserByDocId
 from utils.checkIfExistFile import checkIfExistFile
 
 from utils.decryptSession import decryptSession
 from utils.encryptSession import encryptSession
 
 rootPath = getcwd()
-cacheFilePath = path.join(rootPath,"src","cache", "sesion.as")
+cacheFilePath = path.join(rootPath,"src","cache", "session.as")
 
 def createCacheFile():
     cacheFile = open(cacheFilePath, "w")
@@ -33,3 +34,7 @@ def saveSession(userDocId = ""):
     session = encryptSession(userDocId)
     overwriteCacheFile(session)
     return True
+def authenticateSession():
+    session = checkSession()
+    userData = getUserByDocId(session)
+    return userData

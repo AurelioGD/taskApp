@@ -5,7 +5,7 @@ __pycache__/
 
 #Firebase key
 firebaseProjectKey.json
-
+session.as
 # C extensions
 *.so
 
