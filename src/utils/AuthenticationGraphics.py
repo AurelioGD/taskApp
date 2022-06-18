@@ -1,13 +1,14 @@
 from utils.Graphics import drawMessage
 from utils.cleanTerminal import cleanTerminal
-from utils.getRandomId import getRandomId
+from utils.encryptToSha256 import encryptToSha256
 from consts.errorMessages import errorPasswordIncorrect
 from getpass import getpass
 
 def drawLogin():
     username = input("Ingresa tu usuario: ")
     password = getpass("Ingresa tu contraseña: ")
-    return (username, password )
+    passwordEncrypted = (encryptToSha256(password))
+    return (username, passwordEncrypted )
 
 def drawRegister():
     username = input("Ingresa un nombre de usuario: ")
@@ -19,7 +20,7 @@ def drawRegister():
             break
         cleanTerminal()
         drawMessage(errorPasswordIncorrect)
-    return { "id": str(getRandomId()), "username": username,"keyword": keyword, "password": password }
+    return { "username": username,"keyword": keyword, "password": password }
 
 def drawAuthenticationMenu():
     print("1.-Iniciar sesion")

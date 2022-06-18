@@ -1,10 +1,12 @@
 def drawPrincipalMenu():
+    drawMessage("Task Mannager App")
     print("1.-Gestionar tareas")
     print("2.-Gestionar equipos")
     print("3.-Ver perfil")
     print("4.-Ver notificaciones")
     print("5.-Gestionar amigos")
-    print("6.-Salir")
+    print("6.-Cerrar sesion")
+    print("7.-Salir")
     choice = input("Selecciona una opcion: ")
     return choice
     

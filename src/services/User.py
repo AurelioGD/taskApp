@@ -1,9 +1,9 @@
+from cgi import print_form
 from config.firebaseAdminConfig import db
 
 def createUserService(userData):
     doc_ref = db.collection('users').document()
     doc_ref.set({
-        'id': userData.get("id"),
         'username': userData.get("username"),
         'password': userData.get("password"),
         'keyword': userData.get("keyword"),
@@ -20,6 +20,14 @@ def getUserByUsernameAndPassword(username, password):
         data = doc.to_dict()
         data["idDoc"] = doc.id
         userData.append(data)
+    return userData
+def getUserByDocId(userDocId):
+    query = db.collection('users').document(userDocId)
+    user = query.get()
+    userData = user.to_dict()
+    if userData == None:
+        return False
+    userData["idDoc"] = user.id
     return userData
     
 def getPasswordHashByUsername(username):
