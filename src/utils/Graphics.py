@@ -1,5 +1,5 @@
 def drawPrincipalMenu():
-    drawMessage("Task Mannager App")
+    drawMessage("Principal Menu")
     print("1.-Gestionar tareas")
     print("2.-Gestionar equipos")
     print("3.-Ver perfil")

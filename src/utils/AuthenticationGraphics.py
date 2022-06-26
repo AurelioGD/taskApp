@@ -22,8 +22,10 @@ def drawRegister():
         drawMessage(errorPasswordIncorrect)
     return { "username": username,"keyword": keyword, "password": password }
 
-def drawAuthenticationMenu():
+def drawMenuAuthenticate():
+    drawMessage("Task Mannager App")
     print("1.-Iniciar sesion")
     print("2.-Registrarme")
-    choice = int(input("Selecciona una opcion: "))
+    print("3.-Salir")
+    choice = input("Selecciona una opcion: ")
     return choice

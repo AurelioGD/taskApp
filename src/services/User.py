@@ -1,11 +1,12 @@
-from cgi import print_form
 from config.firebaseAdminConfig import db
+from utils.encryptToSha256 import encryptToSha256
 
 def createUserService(userData):
     doc_ref = db.collection('users').document()
+    passwordEncrypted = encryptToSha256(userData.get("password"))
     doc_ref.set({
         'username': userData.get("username"),
-        'password': userData.get("password"),
+        'password': passwordEncrypted,
         'keyword': userData.get("keyword"),
         'tasks': [],
         'friends': [],

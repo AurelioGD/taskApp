@@ -36,5 +36,7 @@ def saveSession(userDocId = ""):
     return True
 def authenticateSession():
     session = checkSession()
+    if not session:
+        return False
     userData = getUserByDocId(session)
     return userData
